@@ -178,8 +178,9 @@ pyenv local 3.14.3
 
 ---
 
-## 6. Create a virtual environment
+## 6. Create a virtual environment and install pip-tools
 
+Create virtual environment
 ```bash
 python -m venv <name-of-venv>
 source <name-of-venv>/bin/activate
@@ -191,6 +192,12 @@ Upgrade pip:
 python -m pip install --upgrade pip
 pip --version
 ```
+
+Install pip-tools package in the virtual environment.
+```bash
+pip install pip-tools
+```
+This ensures that pip-compile and pip-sync commands used in later sections will work immediately inside your venv.
 
 > You can alternatively use pyenv-virtualenv to create the virtualenv with some additional features. This is covered in section 13.
 ---
@@ -407,6 +414,6 @@ pip-sync
 * Auto-switching via `.python-version` makes it easy to manage multiple projects with different Python versions.
 * The **pip-tools workflow** (`requirements.in` → `requirements.txt` → `pip-sync`) remains exactly the same.
 
-> ✅ Using `pyenv-virtualenv` simplifies Python version management while keeping your dependency workflow fully reproducible.
+> Using `pyenv-virtualenv` simplifies Python version management while keeping your dependency workflow fully reproducible.
 
 ---
